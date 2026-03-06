@@ -1,0 +1,113 @@
+/* --- GRUP SEÇİCİ (Gereksinim 9) --- */
+/* h1, h2 ve p etiketleri için ortak font ve margin ayarı  */
+h1, h2, p {
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    margin: 0;
+    color: #333;
+}
+
+body {
+    background-color: #f8f9fa;
+    display: flex;
+    justify-content: center;
+    padding: 40px 0;
+}
+
+.site-container {
+    width: 850px;
+    background-color: #ffffff;
+    border: 1px solid #e1e4e8;
+    border-radius: 6px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+/* --- HEADER VE NAVİGASYON --- */
+header {
+    padding: 25px;
+    border-bottom: 1px solid #f0f0f0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-content h1 { font-size: 22px; }
+.header-content p { font-size: 13px; color: #777; }
+
+/* Hiyerarşik Seçici 1: nav içindeki liste elemanları  */
+nav ul li {
+    display: inline-block; /* Menüyü yatay yapar [cite: 3] */
+    margin-left: 10px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    font-size: 14px;
+    padding: 8px 14px;
+    border-radius: 4px;
+    color: #555;
+    transition: all 0.2s ease; /* Hover yumuşatma */
+}
+
+/* Hover Efekti [cite: 4] */
+nav ul li a:hover {
+    background-color: #ebf2ff;
+    color: #4a90e2;
+}
+
+.active {
+    background-color: #4a90e2;
+    color: white !important;
+}
+
+/* --- İÇERİK DÜZENİ --- */
+.intro {
+    padding: 25px;
+    line-height: 1.5;
+    font-size: 15px;
+    color: #555;
+}
+
+.columns-container {
+    padding: 0 25px 25px 25px;
+    font-size: 0; /* inline-block boşluk hatasını gidermek için  */
+}
+
+.box {
+    display: inline-block; /* Yan yana dizilim  */
+    vertical-align: top;
+    width: 48%; /* Genişlik  */
+    box-sizing: border-box; /* Padding genişliği etkilemez */
+    padding: 20px;
+    border-radius: 6px;
+    min-height: 280px;
+}
+
+/* Hiyerarşik Seçici 2: .box içindeki p etiketleri  */
+/* Metin düzenleme: font-size, line-height, text-align  */
+.box p {
+    font-size: 14px;
+    line-height: 1.7;
+    text-align: left;
+    margin-top: 10px;
+}
+
+.box-left {
+    background-color: #fffaf0; /* Daha yumuşak krem/sarı tonu */
+    border: 1px solid #f3e5ab;
+    margin-right: 4%; /* İki kutu arası boşluk */
+}
+
+.box-right {
+    background-color: #f0f7ff; /* Daha yumuşak buz mavisi tonu */
+    border: 1px solid #cce0f5;
+}
+
+/* --- FOOTER --- */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #fafbfc;
+    border-top: 1px solid #f0f0f0;
+    font-size: 12px;
+    color: #999;
+}
