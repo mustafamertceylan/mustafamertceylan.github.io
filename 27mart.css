@@ -1,0 +1,281 @@
+/* ===================================================
+   27mart.css — Flexbox Lab | Mustafa Mert Ceylan
+   Orijinal style.css'in renk/font değerleri korundu:
+   - Font: 'Segoe UI', Tahoma, sans-serif
+   - Ana mavi: #4a90e2
+   - Arka plan: #f8f9fa
+   - Metin: #333 / #555 / #777
+   - Kenarlık: #e1e4e8
+   =================================================== */
+
+/* Wrapper: 100vh, flex column */
+.wrapper {
+    width: 95%;
+    max-width: 1200px;
+    margin: 20px auto;
+    background-color: #ffffff;
+    border: 1px solid #e1e4e8;
+    border-radius: 8px;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+    display: flex;
+    flex-direction: column;
+    min-height: calc(100vh - 40px);
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+}
+
+/* ---- NAVBAR: 10vh, space-between, center ---- */
+.fm-navbar {
+    height: 10vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 25px;
+    border-bottom: 1px solid #f0f0f0;
+    flex-shrink: 0;
+}
+
+.fm-logo {
+    font-size: 22px;
+    font-weight: 700;
+    color: #4a90e2;
+    letter-spacing: 2px;
+}
+
+.fm-nav-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 4px;
+}
+
+.fm-nav-links li { display: inline-block; }
+
+.fm-nav-links li a {
+    text-decoration: none;
+    font-size: 14px;
+    padding: 8px 14px;
+    border-radius: 4px;
+    color: #555;
+    transition: all 0.2s ease;
+}
+
+.fm-nav-links li a:hover {
+    background-color: #ebf2ff;
+    color: #4a90e2;
+}
+
+/* ---- HERO: 30vh, row, space-between, stretch ---- */
+.fm-hero {
+    height: 30vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: stretch;
+    border-bottom: 1px solid #f0f0f0;
+    flex-shrink: 0;
+}
+
+.fm-hero-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px 30px;
+    flex: 1;
+    gap: 10px;
+}
+
+.fm-hero-content h1 {
+    font-size: 20px;
+    color: #333;
+    margin: 0;
+}
+
+.fm-hero-content p {
+    font-size: 13px;
+    color: #555;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.fm-hero-content button {
+    align-self: flex-start;
+    padding: 8px 20px;
+    background-color: #4a90e2;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 13px;
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.fm-hero-content button:hover { background-color: #357abd; }
+
+.fm-hero-image {
+    width: 220px;
+    flex-shrink: 0;
+    background-color: #f0f7ff;
+    border-left: 1px solid #cce0f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.fm-hero-image span {
+    font-size: 15px;
+    color: #4a90e2;
+    font-weight: 600;
+}
+
+/* ---- KARTLAR: 30vh, flex-wrap, gap ---- */
+.fm-cards-section {
+    height: 30vh;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    padding: 14px 25px;
+    background-color: #fafbfc;
+    align-content: center;
+    border-bottom: 1px solid #f0f0f0;
+    flex-shrink: 0;
+    overflow: hidden;
+}
+
+.fm-card {
+    flex: 1 1 calc(16.66% - 12px);
+    min-width: 110px;
+    background: #ffffff;
+    border: 1px solid #e1e4e8;
+    border-radius: 6px;
+    padding: 12px 10px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.fm-card:hover {
+    border-color: #4a90e2;
+    transform: translateY(-2px);
+}
+
+.fm-card h3 {
+    font-size: 12px;
+    font-weight: 700;
+    color: #333;
+    margin: 0;
+}
+
+.fm-card p {
+    font-size: 10px;
+    color: #777;
+    margin: 0;
+    line-height: 1.4;
+}
+
+.fm-card button {
+    padding: 4px 12px;
+    background-color: #4a90e2;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 11px;
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.fm-card button:hover { background-color: #357abd; }
+
+/* ---- FLEX GROW: 20vh, 1-2-1, stretch ---- */
+.fm-grow-section {
+    height: 20vh;
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    border-bottom: 1px solid #f0f0f0;
+    flex-shrink: 0;
+    overflow: hidden;
+}
+
+.fm-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+}
+
+.fm-box h4 {
+    font-size: 14px;
+    font-weight: 700;
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    margin: 0;
+}
+
+.fm-box p {
+    font-size: 12px;
+    font-family: monospace;
+    margin: 0;
+}
+
+.fm-box button {
+    padding: 5px 14px;
+    border: none;
+    border-radius: 4px;
+    font-size: 11px;
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+/* flex-grow 1-2-1, renkler orijinal kutularla uyumlu */
+.fm-box-1 {
+    flex-grow: 1;
+    background-color: #fffaf0;
+    border-right: 1px solid #f3e5ab;
+    color: #7a6a2a;
+}
+.fm-box-1 button { background-color: #f3e5ab; color: #7a6a2a; }
+.fm-box-1 button:hover { background-color: #e8d080; }
+
+.fm-box-2 {
+    flex-grow: 2;
+    background-color: #4a90e2;
+    color: white;
+}
+.fm-box-2 h4, .fm-box-2 p { color: white; }
+.fm-box-2 button { background-color: rgba(255,255,255,0.25); color: white; }
+.fm-box-2 button:hover { background-color: rgba(255,255,255,0.4); }
+
+.fm-box-3 {
+    flex-grow: 1;
+    background-color: #f0f7ff;
+    border-left: 1px solid #cce0f5;
+    color: #2a5a8a;
+}
+.fm-box-3 button { background-color: #cce0f5; color: #2a5a8a; }
+.fm-box-3 button:hover { background-color: #a8cced; }
+
+/* ---- FOOTER ---- */
+.fm-footer {
+    height: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fafbfc;
+    border-top: 1px solid #f0f0f0;
+    flex-shrink: 0;
+}
+
+.fm-footer p {
+    font-size: 12px;
+    color: #999;
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+}

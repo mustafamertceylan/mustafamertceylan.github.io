@@ -282,3 +282,10 @@ footer {
     background: #eee;
     margin: 40px 0;
 }
+
+/* --- 27MART BUTONU --- */
+.btn-27mart {
+    background-color: #4a90e2;
+    color: white !important;
+    font-weight: bold;
+}
