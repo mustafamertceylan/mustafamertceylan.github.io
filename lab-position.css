@@ -1,0 +1,318 @@
+/* ===================================================
+   lab-position.css — CSS Position Lab
+   Mustafa Mert Ceylan | Web Programlama Dersi
+   Renk/font: orijinal style.css ile uyumlu
+   =================================================== */
+
+/* ---- SAYFA GENEL ---- */
+.lp-page {
+    min-height: 100vh;
+    background-color: #f0f2f8;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px 60px;
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+}
+
+/* ---- FIXED: Sol üst — Ana Sayfaya Dön ---- */
+/* position: fixed — scroll sırasında sabit kalır */
+.lp-fixed-back {
+    position: fixed;          /* ZORUNLU: fixed */
+    top: 20px;
+    left: 20px;
+    z-index: 1000;
+    background-color: #4a90e2;
+    color: white;
+    text-decoration: none;
+    padding: 10px 18px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    font-weight: 600;
+    box-shadow: 0 2px 8px rgba(74,144,226,0.4);
+    /* Etkileşim 1: transition */
+    transition: background-color 0.2s ease, transform 0.2s ease;
+    cursor: pointer;          /* ZORUNLU: cursor değişimi */
+}
+
+.lp-fixed-back:hover {
+    background-color: #357abd;
+    transform: translateX(3px);
+}
+
+/* ---- FIXED: Sağ alt — Yardımcı Menü ---- */
+/* position: fixed — scroll sırasında sabit kalır */
+.lp-fixed-helper {
+    position: fixed;          /* ZORUNLU: fixed */
+    bottom: 30px;
+    right: 30px;
+    z-index: 1000;
+    background-color: #7c5cbf;
+    color: white;
+    padding: 14px 22px;
+    border-radius: 10px;
+    font-size: 14px;
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    font-weight: 600;
+    box-shadow: 0 4px 14px rgba(124,92,191,0.4);
+    cursor: pointer;          /* ZORUNLU: cursor değişimi */
+    /* Etkileşim 2: @keyframes pulse animasyonu */
+    animation: lp-pulse 2.5s infinite;
+}
+
+.lp-fixed-helper:hover {
+    background-color: #6a4aab;
+    animation: none;
+    transform: scale(1.05);
+    transition: transform 0.2s ease;
+}
+
+@keyframes lp-pulse {
+    0%   { box-shadow: 0 4px 14px rgba(124,92,191,0.4); }
+    50%  { box-shadow: 0 4px 24px rgba(124,92,191,0.75); }
+    100% { box-shadow: 0 4px 14px rgba(124,92,191,0.4); }
+}
+
+/* ---- BAŞLIK ALANI ---- */
+.lp-header {
+    text-align: center;
+    margin-bottom: 40px;
+    margin-top: 20px;
+}
+
+.lp-header h1 {
+    font-size: 26px;
+    color: #333;
+    margin: 0 0 8px;
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+}
+
+.lp-header p {
+    font-size: 14px;
+    color: #777;
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+}
+
+/* ---- ANA KART: position relative kapsayıcı ---- */
+.lp-main {
+    width: 100%;
+    max-width: 700px;
+}
+
+/* ZORUNLU: kapsayıcıda position: relative */
+.lp-card {
+    position: relative;       /* ZORUNLU: relative — absolute öğelerin referansı */
+    background: linear-gradient(135deg, #dde4f7 0%, #e8d8f8 100%);
+    border-radius: 18px;
+    padding: 60px 40px 70px 40px;  /* üst padding artırıldı → h2 rozet seviyesine gelir */
+    min-height: 420px;
+    box-shadow: 0 6px 30px rgba(100,100,180,0.12);
+    overflow: visible;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+    cursor: default;
+}
+
+.lp-card:hover {
+    box-shadow: 0 10px 40px rgba(100,100,180,0.22);
+    transform: translateY(-3px);
+}
+
+/* ---- ABSOLUTE ÖĞE 1: Sol üst — Ücretsiz rozeti ---- */
+/* top: 52px → h2 başlık satırı üstüne biner, z-index:20 ile net görünür */
+.lp-badge-free {
+    position: absolute;
+    top: 52px;                /* h2 metninin bulunduğu bölgeye iner → üst üste binme net */
+    left: 20px;
+    z-index: 20;              /* card-body(z:5) üstünde → üst üste binme görsel olarak belli */
+    background-color: #d4f5c4;
+    color: #3a7a28;
+    padding: 5px 14px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 700;
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.lp-badge-free:hover {
+    transform: scale(1.08);
+}
+
+/* ---- ABSOLUTE ÖĞE 2: Sağ üst — Tarih etiketi ---- */
+.lp-badge-date {
+    position: absolute;       /* ZORUNLU: absolute */
+    top: 20px;
+    right: 20px;
+    z-index: 10;              /* ZORUNLU: z-index */
+    background-color: #c8e6fd;
+    color: #1a5a8a;
+    padding: 5px 14px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 700;
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    cursor: pointer;          /* ZORUNLU: cursor değişimi */
+    transition: transform 0.2s ease;
+}
+
+.lp-badge-date:hover {
+    transform: scale(1.08);
+}
+
+/* ---- ABSOLUTE ÖĞE 3: Arka plan dekoratif daire (z-index altında içerikten) ---- */
+.lp-deco-circle {
+    position: absolute;       /* ZORUNLU: absolute */
+    bottom: 60px;
+    right: 60px;
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    background: rgba(180, 160, 230, 0.25);
+    z-index: 1;               /* ZORUNLU: z-index — içeriğin altında kalır */
+    /* Etkileşim: @keyframes yavaş döndürme */
+    animation: lp-spin 12s linear infinite;
+    pointer-events: none;
+}
+
+@keyframes lp-spin {
+    from { transform: scale(1);   opacity: 0.25; }
+    50%  { transform: scale(1.1); opacity: 0.45; }
+    to   { transform: scale(1);   opacity: 0.25; }
+}
+
+/* ---- KART ANA İÇERİĞİ ---- */
+.lp-card-body {
+    position: relative;
+    z-index: 5;               /* rozetten (z-index:20) altta → rozet h2'nin üstüne biner */
+    max-width: 480px;
+}
+
+.lp-card-body h2 {
+    font-size: 24px;
+    color: #2a2a6a;
+    margin: 0 0 16px;
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    line-height: 1.3;
+}
+
+.lp-card-body p {
+    font-size: 14px;
+    color: #444;
+    line-height: 1.75;
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+}
+
+/* ---- ABSOLUTE ÖĞE 4: Konum etiketi + Tooltip ---- */
+.lp-badge-location {
+    position: absolute;
+    bottom: 90px;
+    right: 20px;
+    z-index: 10;
+    background-color: #ffffff;
+    color: #444;
+    padding: 10px 18px;
+    border-radius: 10px;
+    font-size: 13px;
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+    /* Tooltip için referans: isolation ile stacking context kur */
+    isolation: isolate;
+}
+
+.lp-badge-location:hover {
+    background-color: #f0f7ff;
+    transform: translateY(-2px);
+}
+
+.lp-badge-location:active {
+    transform: scale(0.96);
+    background-color: #ddeeff;
+}
+
+/* Tooltip içi span — badge'in boyutuna göre konumlanır */
+.lp-tooltip {
+    position: absolute;
+    bottom: calc(100% + 12px);  /* badge'in hemen üstü */
+    left: 50%;
+    transform: translateX(-50%) translateY(8px);
+    background-color: #2a2a6a;
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: 600;
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    white-space: nowrap;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.25s ease, transform 0.25s ease;
+    box-shadow: 0 4px 14px rgba(42,42,106,0.3);
+    z-index: 50;
+}
+
+/* Ok kuyruğu */
+.lp-tooltip::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 7px solid transparent;
+    border-top-color: #2a2a6a;
+}
+
+/* Hover'da tooltip görünür */
+.lp-badge-location:hover .lp-tooltip {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+}
+
+/* ---- ABSOLUTE ÖĞE 5: Son Kayıt — @keyframes animasyonu ---- */
+.lp-badge-deadline {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    z-index: 10;
+    background-color: #fde8d8;
+    color: #a04020;
+    padding: 6px 16px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 700;
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    cursor: pointer;
+    /* Sürekli çarpan animasyon */
+    animation: lp-deadline-beat 1.6s ease-in-out infinite;
+    transition: background-color 0.2s ease;
+}
+
+.lp-badge-deadline:hover {
+    background-color: #fbd0b0;
+    animation-play-state: paused; /* hover'da durur */
+}
+
+@keyframes lp-deadline-beat {
+    0%   { transform: scale(1);    box-shadow: 0 0 0 0 rgba(160,64,32,0.3); }
+    40%  { transform: scale(1.07); box-shadow: 0 0 0 6px rgba(160,64,32,0); }
+    60%  { transform: scale(1.04); }
+    100% { transform: scale(1);    box-shadow: 0 0 0 0 rgba(160,64,32,0); }
+}
+
+/* ---- FOOTER ---- */
+.lp-footer {
+    margin-top: 50px;
+    text-align: center;
+}
+
+.lp-footer p {
+    font-size: 12px;
+    color: #aaa;
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+}

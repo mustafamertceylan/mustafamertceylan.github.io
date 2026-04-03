@@ -289,3 +289,15 @@ footer {
     color: white !important;
     font-weight: bold;
 }
+
+/* --- 3NİSAN BUTONU --- */
+.btn-3nisan {
+    background-color: #7c5cbf;
+    color: white !important;
+    font-weight: bold;
+}
+
+.btn-3nisan:hover {
+    background-color: #6a4aab !important;
+    color: white !important;
+}

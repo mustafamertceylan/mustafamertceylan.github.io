@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mustafa Mert Ceylan - CSS Position Lab</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="lab-position.css">
+</head>
+<body>
+    <!-- FIXED: Sabit kalan "Ana Sayfaya Dön" butonu -->
+    <a href="index.html" class="lp-fixed-back">← Ana Sayfaya Dön</a>
+
+    <!-- FIXED: Sağ altta sabit yardımcı öğe -->
+    <div class="lp-fixed-helper">Yardımcı Menü</div>
+
+    <!-- SAYFA GÖVDESI -->
+    <div class="lp-page">
+
+        <!-- Kısa başlık alanı -->
+        <header class="lp-header">
+            <h1>CSS Position Lab</h1>
+            <p>Marmara Üniversitesi — Siber Güvenlik Topluluğu Etkinliği</p>
+        </header>
+
+        <!-- ANA DUYURU KARTI: position: relative kapsayıcı -->
+        <main class="lp-main">
+            <div class="lp-card">
+
+                <!-- Absolute öğe 1: Sol üst köşe rozeti -->
+                <div class="lp-badge lp-badge-free">Ücretsiz</div>
+
+                <!-- Absolute öğe 2: Sağ üst köşe tarih etiketi -->
+                <div class="lp-badge lp-badge-date">3 Nisan</div>
+
+                <!-- Absolute öğe 3: Arka plan dekoratif daire (z-index altında) -->
+                <div class="lp-deco-circle"></div>
+
+                <!-- Kart ana içeriği -->
+                <div class="lp-card-body">
+                    <h2>Siber Güvenlik Topluluğu Etkinliği</h2>
+                    <p>
+                        Bu etkinlikte amaç; CSS position özelliklerini kullanarak
+                        tek bir duyuru kartı üzerinde relative, absolute, fixed,
+                        z-index, hover, cursor ve animasyon mantığını birlikte
+                        göstermektir. Penetrasyon testi ve ağ güvenliği konularında
+                        deneyimli konuşmacılar yer alacaktır.
+                    </p>
+                </div>
+
+                <!-- Absolute öğe 4: Orta-sağ konum etiketi -->
+                <div class="lp-badge lp-badge-location">📍 Konum: Konferans Salonu</div>
+
+                <!-- Absolute öğe 5: Sağ alt "Son Kayıt" etiketi -->
+                <div class="lp-badge lp-badge-deadline">⏰ Son Kayıt</div>
+
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="lp-footer">
+            <p>2026 — CSS Position Lab Çalışması | Mustafa Mert Ceylan</p>
+        </footer>
+
+    </div>
+</body>
+</html>
