@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>Uygulama 1 - Not Hesaplama</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .app-wrapper {
+            max-width: 500px;
+            margin: 30px auto;
+            background: #ffffff;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            padding: 30px;
+            font-family: Arial, sans-serif;
+        }
+
+        .app-wrapper h2 {
+            margin-bottom: 20px;
+            color: #2c3e50;
+            font-size: 1.4em;
+        }
+
+        .form-group {
+            margin-bottom: 14px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            color: #555;
+            font-size: 0.9em;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 9px 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 1em;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: #8faadd;
+        }
+
+        .btn-hesapla {
+            width: 100%;
+            padding: 10px;
+            background-color: #8faadd;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 1em;
+            cursor: pointer;
+            font-family: Arial, sans-serif;
+            transition: 0.3s;
+            margin-top: 6px;
+        }
+
+        .btn-hesapla:hover {
+            background-color: #6b8fcc;
+        }
+
+        .result-box {
+            display: none;
+            margin-top: 20px;
+            padding: 16px;
+            background-color: #e3effa;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 0.95em;
+            color: #2c3e50;
+            line-height: 1.7;
+        }
+
+        .result-box .student-name {
+            font-weight: bold;
+            font-size: 1.05em;
+            margin-bottom: 6px;
+        }
+
+        .result-box .durum-gecti {
+            color: #27ae60;
+            font-weight: bold;
+        }
+
+        .result-box .durum-kaldi {
+            color: #e74c3c;
+            font-weight: bold;
+        }
+
+        .error-msg {
+            color: #e74c3c;
+            font-size: 0.85em;
+            margin-top: 4px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>MustafaMertCeylan</h1>
+        <p>Marmara Üniversitesi Öğrencisi | Siber Güvenlik ve Web Programlama</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Ana Sayfa</a></li>
+            <li><a href="about.html">Hakkımda</a></li>
+            <li><a href="interests.html">İlgi Alanlarım</a></li>
+            <li><a href="contact.html">İletişim</a></li>
+            <li><a href="hafta6.html" class="active">Hafta 6</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <div class="app-wrapper">
+            <h2>Öğrenci Not Hesaplama</h2>
+
+            <div class="form-group">
+                <label for="adSoyad">Ad Soyad</label>
+                <input type="text" id="adSoyad" placeholder="Adınızı ve soyadınızı girin">
+            </div>
+
+            <div class="form-group">
+                <label for="vize">Vize Notu (0-100)</label>
+                <input type="text" id="vize" placeholder="Vize notunuzu girin">
+                <span class="error-msg" id="vizeHata">Lütfen 0-100 arasında geçerli bir not girin.</span>
+            </div>
+
+            <div class="form-group">
+                <label for="final">Final Notu (0-100)</label>
+                <input type="text" id="final" placeholder="Final notunuzu girin">
+                <span class="error-msg" id="finalHata">Lütfen 0-100 arasında geçerli bir not girin.</span>
+            </div>
+
+            <button class="btn-hesapla" onclick="hesapla()">Hesapla</button>
+
+            <div class="result-box" id="sonuc">
+                <div class="student-name" id="sonucAd"></div>
+                <div id="sonucOrtalama"></div>
+                <div id="sonucHarf"></div>
+                <div id="sonucDurum"></div>
+            </div>
+        </div>
+    </main>
+
+    <p style="text-align:center;"><a href="hafta6.html">← Hafta 6'ya geri dön</a></p>
+    <hr>
+    <footer>
+        <p>&copy; 2026 MustafaMertCeylan | Web Programlama Dersi</p>
+    </footer>
+
+    <script>
+        function harfNotu(ort) {
+            if (ort >= 90) return 'AA';
+            if (ort >= 85) return 'BA';
+            if (ort >= 80) return 'BB';
+            if (ort >= 75) return 'CB';
+            if (ort >= 70) return 'CC';
+            if (ort >= 65) return 'DC';
+            if (ort >= 60) return 'DD';
+            if (ort >= 50) return 'FD';
+            return 'FF';
+        }
+
+        function hesapla() {
+            const adSoyad = document.getElementById('adSoyad').value.trim();
+            const vizeVal = document.getElementById('vize').value.trim();
+            const finalVal = document.getElementById('final').value.trim();
+
+            // Reset errors
+            document.getElementById('vizeHata').style.display = 'none';
+            document.getElementById('finalHata').style.display = 'none';
+            document.getElementById('sonuc').style.display = 'none';
+
+            const vize = parseFloat(vizeVal);
+            const finalNot = parseFloat(finalVal);
+
+            let hata = false;
+
+            if (isNaN(vize) || vize < 0 || vize > 100) {
+                document.getElementById('vizeHata').style.display = 'block';
+                hata = true;
+            }
+            if (isNaN(finalNot) || finalNot < 0 || finalNot > 100) {
+                document.getElementById('finalHata').style.display = 'block';
+                hata = true;
+            }
+            if (hata) return;
+
+            const ortalama = vize * 0.4 + finalNot * 0.6;
+            const harf = harfNotu(ortalama);
+            const gecti = ortalama >= 50;
+
+            document.getElementById('sonucAd').textContent = adSoyad || 'Öğrenci';
+            document.getElementById('sonucOrtalama').textContent = 'Ortalama: ' + ortalama.toFixed(2);
+            document.getElementById('sonucHarf').textContent = 'Harf Notu: ' + harf;
+
+            const durumEl = document.getElementById('sonucDurum');
+            durumEl.textContent = 'Durum: ' + (gecti ? 'Geçti' : 'Kaldı');
+            durumEl.className = gecti ? 'durum-gecti' : 'durum-kaldi';
+
+            document.getElementById('sonuc').style.display = 'block';
+        }
+    </script>
+</body>
+</html>

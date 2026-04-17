@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>Uygulama 2 - Birim Dönüştürücü</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .app-wrapper {
+            max-width: 480px;
+            margin: 30px auto;
+            background: #ffffff;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            padding: 30px;
+            font-family: Arial, sans-serif;
+        }
+
+        .app-wrapper h2 {
+            margin-bottom: 20px;
+            color: #2c3e50;
+            font-size: 1.4em;
+        }
+
+        .form-group {
+            margin-bottom: 16px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            color: #555;
+            font-size: 0.9em;
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 9px 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 1em;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+            background-color: #fff;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: #8faadd;
+        }
+
+        .btn-hesapla {
+            width: 100%;
+            padding: 10px;
+            background-color: #8faadd;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 1em;
+            cursor: pointer;
+            font-family: Arial, sans-serif;
+            transition: 0.3s;
+            margin-top: 4px;
+        }
+
+        .btn-hesapla:hover {
+            background-color: #6b8fcc;
+        }
+
+        .result-box {
+            display: none;
+            margin-top: 20px;
+            padding: 14px 20px;
+            background-color: #fff4d1;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 1.05em;
+            color: #2c3e50;
+        }
+
+        .error-msg {
+            color: #e74c3c;
+            font-size: 0.85em;
+            margin-top: 4px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>MustafaMertCeylan</h1>
+        <p>Marmara Üniversitesi Öğrencisi | Siber Güvenlik ve Web Programlama</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Ana Sayfa</a></li>
+            <li><a href="about.html">Hakkımda</a></li>
+            <li><a href="interests.html">İlgi Alanlarım</a></li>
+            <li><a href="contact.html">İletişim</a></li>
+            <li><a href="hafta6.html" class="active">Hafta 6</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <div class="app-wrapper">
+            <h2>Birim Dönüştürücü</h2>
+
+            <div class="form-group">
+                <label for="deger">Değer Giriniz:</label>
+                <input type="text" id="deger" placeholder="Dönüştürmek istediğiniz değeri girin">
+                <span class="error-msg" id="degerHata">Lütfen geçerli bir sayı girin.</span>
+            </div>
+
+            <div class="form-group">
+                <label for="donusumTipi">Dönüşüm Tipi:</label>
+                <select id="donusumTipi">
+                    <optgroup label="Sıcaklık">
+                        <option value="celsius-fahrenheit">Celsius → Fahrenheit</option>
+                        <option value="fahrenheit-celsius">Fahrenheit → Celsius</option>
+                        <option value="celsius-kelvin">Celsius → Kelvin</option>
+                        <option value="kelvin-celsius">Kelvin → Celsius</option>
+                    </optgroup>
+                    <optgroup label="Uzunluk">
+                        <option value="metre-kilometre">Metre → Kilometre</option>
+                        <option value="kilometre-metre">Kilometre → Metre</option>
+                        <option value="metre-mil">Metre → Mil</option>
+                        <option value="mil-metre">Mil → Metre</option>
+                    </optgroup>
+                    <optgroup label="Ağırlık">
+                        <option value="kilogram-gram">Kilogram → Gram</option>
+                        <option value="gram-kilogram">Gram → Kilogram</option>
+                        <option value="kilogram-pound">Kilogram → Pound</option>
+                        <option value="pound-kilogram">Pound → Kilogram</option>
+                    </optgroup>
+                </select>
+            </div>
+
+            <button class="btn-hesapla" onclick="donustur()">Hesapla</button>
+
+            <div class="result-box" id="sonuc">
+                <span id="sonucMetin"></span>
+            </div>
+        </div>
+    </main>
+
+    <p style="text-align:center;"><a href="hafta6.html">← Hafta 6'ya geri dön</a></p>
+    <hr>
+    <footer>
+        <p>&copy; 2026 MustafaMertCeylan | Web Programlama Dersi</p>
+    </footer>
+
+    <script>
+        const donusumler = {
+            'celsius-fahrenheit': (v) => ({ sonuc: v * 9/5 + 32, birim: '°F' }),
+            'fahrenheit-celsius': (v) => ({ sonuc: (v - 32) * 5/9, birim: '°C' }),
+            'celsius-kelvin':     (v) => ({ sonuc: v + 273.15, birim: 'K' }),
+            'kelvin-celsius':     (v) => ({ sonuc: v - 273.15, birim: '°C' }),
+            'metre-kilometre':    (v) => ({ sonuc: v / 1000, birim: 'km' }),
+            'kilometre-metre':    (v) => ({ sonuc: v * 1000, birim: 'm' }),
+            'metre-mil':          (v) => ({ sonuc: v / 1609.344, birim: 'mil' }),
+            'mil-metre':          (v) => ({ sonuc: v * 1609.344, birim: 'm' }),
+            'kilogram-gram':      (v) => ({ sonuc: v * 1000, birim: 'g' }),
+            'gram-kilogram':      (v) => ({ sonuc: v / 1000, birim: 'kg' }),
+            'kilogram-pound':     (v) => ({ sonuc: v * 2.20462, birim: 'lb' }),
+            'pound-kilogram':     (v) => ({ sonuc: v / 2.20462, birim: 'kg' }),
+        };
+
+        function donustur() {
+            const degerVal = document.getElementById('deger').value.trim();
+            const tip = document.getElementById('donusumTipi').value;
+
+            document.getElementById('degerHata').style.display = 'none';
+            document.getElementById('sonuc').style.display = 'none';
+
+            const deger = parseFloat(degerVal);
+            if (isNaN(deger)) {
+                document.getElementById('degerHata').style.display = 'block';
+                return;
+            }
+
+            const fn = donusumler[tip];
+            if (!fn) return;
+
+            const { sonuc, birim } = fn(deger);
+            const formatli = parseFloat(sonuc.toFixed(4)).toLocaleString('tr-TR');
+            document.getElementById('sonucMetin').textContent = 'Sonuç: ' + formatli + ' ' + birim;
+            document.getElementById('sonuc').style.display = 'block';
+        }
+    </script>
+</body>
+</html>

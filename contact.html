@@ -2,118 +2,41 @@
 <html lang="tr">
 <head>
     <meta charset="UTF-8">
-    <title>İletişim - Mustafa Mert Ceylan</title>
+    <title>İletişim - Yahya</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="site-container">
-        <header>
-            <div class="header-content">
-                <h1>İletişim</h1>
-                <p>Benimle iletişime geçebileceğiniz bilgiler</p>
-            </div>
-            <nav>
-                <ul>
-                    <li><a href="index.html">Ana Sayfa</a></li>
-                    <li><a href="about.html">Hakkında</a></li>
-                    <li><a href="interests.html">Hizmetler</a></li>
-                    <li><a href="contact.html" class="active">İletişim</a></li>
-                </ul>
-            </nav>
-        </header>
+    <h2>İletişim</h2>
+    <p>Benimle iletişime geçebileceğiniz bilgiler</p>
 
-        <main class="contact-info-section">
-    <section class="info-grid">
-        <div class="info-card">
-            <div class="icon">📧</div>
-            <h3>E-posta</h3>
-            <p><a href="/cdn-cgi/l/email-protection#0865656d7a7c3a3b4865697a7d66266d6c7d267c7a"><span class="__cf_email__" data-cfemail="f09d9d958284c2c3b09d9182859ede959485de8482">[email&#160;protected]</span></a></p>
-        </div>
-        <div class="info-card">
-            <div class="icon">🔗</div>
-            <h3>LinkedIn</h3>
-            <p><a href="#">LinkedIn Profilim</a></p>
-        </div>
-        <div class="info-card">
-            <div class="icon">💻</div>
-            <h3>GitHub</h3>
-            <p><a href="#">GitHub Profilim</a></p>
-        </div>
-    </section>
+    <nav>
+        <ul>
+            <li><a href="index.html">Ana Sayfa</a></li>
+            <li><a href="about.html">Hakkımda</a></li>
+            <li><a href="interests.html">İlgi Alanlarım</a></li>
+            <li><a href="contact.html">İletişim</a></li>
+            <li><a href="hafta6.html">Hafta 6</a></li>
+        </ul>
+    </nav>
 
-    <section class="faq-container">
-        <h3>🤔 Sık Sorulan Sorular</h3>
-        
-        <div class="faq-item">
-            <h4>Mesajlara ne kadar sürede dönüş yapıyorsunuz?</h4>
-            <p>Genellikle akademik yoğunluğuma bağlı olarak 24 saat içinde dönüş yapmaya özen gösteriyorum.</p>
-        </div>
+    <h3>İletişim Bilgilerim</h3>
+    <ul>
+        <li>E-posta: <a href="mailto:mmert23@marun.edu.tr">mmert23@marun.edu.tr</a></li>
+        <li>LinkedIn: <a href="#">LinkedIn Profilim</a> </li>
+        <li>GitHub: <a href="#">GitHub Profilim</a></li>
+    </ul>
 
-        <div class="faq-item">
-            <h4>Projelerde iş birliğine açık mısınız?</h4>
-            <p>Evet, özellikle siber güvenlik ve açık kaynak kodlu projelerde yer almayı seviyorum. Benimle her zaman iletişime geçebilirsiniz.</p>
-        </div>
-    </section>
+    <h3>Sık Sorulan Sorular</h3>
+    <h4>Mesajlara ne kadar sürede dönüş yapıyorsunuz?</h4>
+    <p>Genellikle okul mailim üzerinden 24 saat içinde dönüş yapıyorum.</p>
 
-    <hr class="section-divider">
+    <h4>Projelerde iş birliğine açık mısınız?</h4>
+    <p>Evet, özellikle siber güvenlik, ağ projeleri ve açık kaynak çalışmalarda iş birliklerine açığım.</p>
 
+    <p><a href="index.html">← Ana sayfaya geri dön</a></p>
     <hr>
-
-    <div class="contact-container">
-    <h2>Detaylı İletişim Formu</h2>
-    <form action="#" method="post">
-        
-        <label for="fullname">Ad Soyad:</label>
-        <input type="text" id="fullname" name="fullname" placeholder="Örn: Mustafa Mert Ceylan" required>
-
-        <label for="email">E-posta Adresi:</label>
-        <input type="email" id="email" name="email" placeholder="ornek@mail.com" required>
-
-        <label for="pwd">Başvuru Takip Şifresi:</label>
-        <input type="password" id="pwd" name="pwd" placeholder="Şifrenizi girin">
-
-        <div class="form-section">
-            <label>İletişim Tercihi:</label>
-            <div class="option-group">
-                <input type="radio" id="mail-pref" name="pref" value="email">
-                <label for="mail-pref" class="inline-label">Bana e-posta ile ulaşın</label><br>
-                <input type="radio" id="tel-pref" name="pref" value="phone">
-                <label for="tel-pref" class="inline-label">Bana telefonla ulaşın</label>
-            </div>
-        </div>
-
-        <div class="form-section">
-            <label>İlgi Alanları / Yetenekler:</label>
-            <div class="option-group">
-                <input type="checkbox" id="html" name="skill" value="html">
-                <label for="html" class="inline-label">HTML</label><br>
-                <input type="checkbox" id="css" name="skill" value="css">
-                <label for="css" class="inline-label">CSS</label><br>
-                <input type="checkbox" id="algo" name="skill" value="algo">
-                <label for="algo" class="inline-label">Algoritma</label>
-            </div>
-        </div>
-
-        <label for="subject">Konu:</label>
-        <select id="subject" name="subject">
-            <option value="">Lütfen bir konu seçin...</option>
-            <option value="is">İş Teklifi</option>
-            <option value="soru">Soru</option>
-            <option value="geri">Geri Bildirim</option>
-        </select>
-
-        <label for="cv">Özgeçmiş (CV) veya Fotoğraf Yükle:</label>
-        <input type="file" id="cv" name="cv">
-
-        <label for="message">Mesajınız:</label>
-        <textarea id="message" name="message" rows="4" placeholder="Detaylı mesajınızı buraya yazabilirsiniz..."></textarea>
-
-        <div class="btn-container">
-            <button type="submit" class="btn-submit">Gönder</button>
-            <button type="reset" class="btn-reset">Temizle</button>
-        </div>
-    </form>
-</div>
-</main>
-
-    
+    <footer>
+        <p>&copy; 2026 Yahya | Web Programlama Dersi</p>
+    </footer>
+</body>
+</html>

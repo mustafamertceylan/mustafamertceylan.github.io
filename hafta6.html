@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>Hafta 6 - MustafaMertCeylan</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .hafta6-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 40px;
+            min-height: 300px;
+            padding: 40px 20px;
+            flex-wrap: wrap;
+        }
+
+        .uygulama-card {
+            display: block;
+            width: 220px;
+            padding: 40px 20px;
+            background-color: #ffffff;
+            border: 2px solid #8faadd;
+            border-radius: 10px;
+            text-align: center;
+            text-decoration: none;
+            color: #333;
+            font-family: Arial, sans-serif;
+            font-size: 1.1em;
+            font-weight: bold;
+            box-shadow: 0 2px 8px rgba(143, 170, 221, 0.2);
+            transition: 0.3s;
+        }
+
+        .uygulama-card:hover {
+            background-color: #8faadd;
+            color: white;
+            transform: translateY(-4px);
+            box-shadow: 0 6px 18px rgba(143, 170, 221, 0.4);
+        }
+
+        .uygulama-card .card-icon {
+            font-size: 2.5em;
+            margin-bottom: 14px;
+        }
+
+        .uygulama-card .card-desc {
+            font-size: 0.82em;
+            font-weight: normal;
+            margin-top: 8px;
+            opacity: 0.75;
+        }
+
+        .page-title {
+            text-align: center;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+            color: #2c3e50;
+        }
+
+        .page-title p {
+            color: #666;
+            font-size: 0.95em;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>MustafaMertCeylan</h1>
+        <p>Marmara Üniversitesi Öğrencisi | Siber Güvenlik ve Web Programlama</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Ana Sayfa</a></li>
+            <li><a href="about.html">Hakkımda</a></li>
+            <li><a href="interests.html">İlgi Alanlarım</a></li>
+            <li><a href="contact.html">İletişim</a></li>
+            <li><a href="hafta6.html" class="active">Hafta 6</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <div class="page-title">
+            <h2>Hafta 6 Uygulamaları</h2>
+            <p>Aşağıdaki uygulamalardan birini seçin</p>
+        </div>
+
+        <div class="hafta6-container">
+            <a href="uygulama1.html" class="uygulama-card">
+                <div class="card-icon">📊</div>
+                Uygulama 1
+                <div class="card-desc">Öğrenci Not Hesaplama</div>
+            </a>
+            <a href="uygulama2.html" class="uygulama-card">
+                <div class="card-icon">🔁</div>
+                Uygulama 2
+                <div class="card-desc">Birim Dönüştürücü</div>
+            </a>
+        </div>
+    </main>
+
+    <p style="text-align:center;"><a href="index.html">← Ana sayfaya geri dön</a></p>
+    <hr>
+    <footer>
+        <p>&copy; 2026 MustafaMertCeylan | Web Programlama Dersi</p>
+    </footer>
+</body>
+</html>
