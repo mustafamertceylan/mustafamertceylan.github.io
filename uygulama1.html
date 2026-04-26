@@ -2,158 +2,192 @@
 <html lang="tr">
 <head>
     <meta charset="UTF-8">
-    <title>Uygulama 1 - Not Hesaplama</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uygulama 1 - Not Hesaplama | MustafaMertCeylan</title>
     <link rel="stylesheet" href="style.css">
     <style>
+        /* ---- Uygulama 1'e özel stiller — style.css mimarisi korundu ---- */
+        .app-section {
+            padding: 30px 40px 50px;
+            display: flex;
+            justify-content: center;
+        }
+
         .app-wrapper {
+            width: 100%;
             max-width: 500px;
-            margin: 30px auto;
             background: #ffffff;
-            border: 1px solid #ccc;
+            border: 1px solid #e1e4e8;
             border-radius: 8px;
             padding: 30px;
-            font-family: Arial, sans-serif;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
         }
 
         .app-wrapper h2 {
-            margin-bottom: 20px;
-            color: #2c3e50;
-            font-size: 1.4em;
+            font-size: 20px;
+            color: #333;
+            margin-bottom: 24px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid #2ecc71;
         }
 
         .form-group {
-            margin-bottom: 14px;
+            margin-bottom: 16px;
         }
 
         .form-group label {
             display: block;
-            margin-bottom: 5px;
+            margin-bottom: 6px;
             color: #555;
-            font-size: 0.9em;
+            font-size: 13px;
+            font-weight: bold;
         }
 
         .form-group input {
             width: 100%;
-            padding: 9px 12px;
-            border: 1px solid #ccc;
+            padding: 10px 12px;
+            border: 1px solid #e1e4e8;
             border-radius: 4px;
-            font-size: 1em;
+            font-size: 14px;
+            font-family: 'Segoe UI', Tahoma, sans-serif;
             box-sizing: border-box;
-            font-family: Arial, sans-serif;
+            transition: border-color 0.2s ease;
+            color: #333;
         }
 
         .form-group input:focus {
             outline: none;
-            border-color: #8faadd;
+            border-color: #2ecc71;
+            box-shadow: 0 0 0 3px rgba(46, 204, 113, 0.1);
         }
 
         .btn-hesapla {
             width: 100%;
-            padding: 10px;
-            background-color: #8faadd;
+            padding: 11px;
+            background-color: #2ecc71;
             color: white;
             border: none;
             border-radius: 4px;
-            font-size: 1em;
+            font-size: 14px;
+            font-weight: bold;
+            font-family: 'Segoe UI', Tahoma, sans-serif;
             cursor: pointer;
-            font-family: Arial, sans-serif;
-            transition: 0.3s;
-            margin-top: 6px;
+            transition: background-color 0.2s ease;
+            margin-top: 4px;
         }
 
         .btn-hesapla:hover {
-            background-color: #6b8fcc;
+            background-color: #27ae60;
         }
 
         .result-box {
             display: none;
             margin-top: 20px;
-            padding: 16px;
-            background-color: #e3effa;
-            border: 1px solid #ccc;
+            padding: 18px;
+            background-color: #f0fdf6;
+            border: 1px solid #a8e6c1;
             border-radius: 6px;
-            font-size: 0.95em;
-            color: #2c3e50;
-            line-height: 1.7;
+            font-size: 14px;
+            color: #333;
+            line-height: 1.8;
         }
 
         .result-box .student-name {
             font-weight: bold;
-            font-size: 1.05em;
+            font-size: 15px;
             margin-bottom: 6px;
+            color: #2a2a2a;
         }
 
-        .result-box .durum-gecti {
-            color: #27ae60;
-            font-weight: bold;
-        }
-
-        .result-box .durum-kaldi {
-            color: #e74c3c;
-            font-weight: bold;
-        }
+        .result-box .durum-gecti { color: #27ae60; font-weight: bold; }
+        .result-box .durum-kaldi { color: #e74c3c; font-weight: bold; }
 
         .error-msg {
             color: #e74c3c;
-            font-size: 0.85em;
+            font-size: 12px;
             margin-top: 4px;
             display: none;
         }
+
+        .back-link {
+            padding: 0 40px 20px;
+        }
+
+        .back-link a {
+            font-size: 13px;
+            color: #4a90e2;
+            text-decoration: none;
+        }
+
+        .back-link a:hover { text-decoration: underline; }
     </style>
 </head>
 <body>
-    <header>
-        <h1>MustafaMertCeylan</h1>
-        <p>Marmara Üniversitesi Öğrencisi | Siber Güvenlik ve Web Programlama</p>
-    </header>
+    <div class="site-container">
 
-    <nav>
-        <ul>
-            <li><a href="index.html">Ana Sayfa</a></li>
-            <li><a href="about.html">Hakkımda</a></li>
-            <li><a href="interests.html">İlgi Alanlarım</a></li>
-            <li><a href="contact.html">İletişim</a></li>
-            <li><a href="hafta6.html" class="active">Hafta 6</a></li>
-        </ul>
-    </nav>
-
-    <main>
-        <div class="app-wrapper">
-            <h2>Öğrenci Not Hesaplama</h2>
-
-            <div class="form-group">
-                <label for="adSoyad">Ad Soyad</label>
-                <input type="text" id="adSoyad" placeholder="Adınızı ve soyadınızı girin">
+        <header>
+            <div class="header-content">
+                <h1>Öğrenci Not Hesaplama</h1>
+                <p>Marmara Üniversitesi - Bilgisayar Mühendisliği</p>
             </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Ana Sayfa</a></li>
+                    <li><a href="about.html">Hakkında</a></li>
+                    <li><a href="interests.html">Hizmetler</a></li>
+                    <li><a href="contact.html">İletişim</a></li>
+                    <li><a href="27mart.html" class="btn-27mart">27Mart</a></li>
+                    <li><a href="lab-position.html" class="btn-3nisan">3Nisan</a></li>
+                    <li><a href="hafta6.html" class="btn-hafta6 active">Hafta 6</a></li>
+                </ul>
+            </nav>
+        </header>
 
-            <div class="form-group">
-                <label for="vize">Vize Notu (0-100)</label>
-                <input type="text" id="vize" placeholder="Vize notunuzu girin">
-                <span class="error-msg" id="vizeHata">Lütfen 0-100 arasında geçerli bir not girin.</span>
+        <section class="intro">
+            <p>Vize ve final notlarını girerek ağırlıklı ortalamanı ve harf notunu hesaplayabilirsin. (Vize: %40, Final: %60)</p>
+        </section>
+
+        <main class="app-section">
+            <div class="app-wrapper">
+                <h2>📊 Not Hesaplama</h2>
+
+                <div class="form-group">
+                    <label for="adSoyad">Ad Soyad</label>
+                    <input type="text" id="adSoyad" placeholder="Adınızı ve soyadınızı girin">
+                </div>
+
+                <div class="form-group">
+                    <label for="vize">Vize Notu (0–100)</label>
+                    <input type="text" id="vize" placeholder="Vize notunuzu girin">
+                    <span class="error-msg" id="vizeHata">Lütfen 0–100 arasında geçerli bir not girin.</span>
+                </div>
+
+                <div class="form-group">
+                    <label for="final">Final Notu (0–100)</label>
+                    <input type="text" id="final" placeholder="Final notunuzu girin">
+                    <span class="error-msg" id="finalHata">Lütfen 0–100 arasında geçerli bir not girin.</span>
+                </div>
+
+                <button class="btn-hesapla" onclick="hesapla()">Hesapla</button>
+
+                <div class="result-box" id="sonuc">
+                    <div class="student-name" id="sonucAd"></div>
+                    <div id="sonucOrtalama"></div>
+                    <div id="sonucHarf"></div>
+                    <div id="sonucDurum"></div>
+                </div>
             </div>
+        </main>
 
-            <div class="form-group">
-                <label for="final">Final Notu (0-100)</label>
-                <input type="text" id="final" placeholder="Final notunuzu girin">
-                <span class="error-msg" id="finalHata">Lütfen 0-100 arasında geçerli bir not girin.</span>
-            </div>
-
-            <button class="btn-hesapla" onclick="hesapla()">Hesapla</button>
-
-            <div class="result-box" id="sonuc">
-                <div class="student-name" id="sonucAd"></div>
-                <div id="sonucOrtalama"></div>
-                <div id="sonucHarf"></div>
-                <div id="sonucDurum"></div>
-            </div>
+        <div class="back-link">
+            <a href="hafta6.html">← Hafta 6'ya geri dön</a>
         </div>
-    </main>
 
-    <p style="text-align:center;"><a href="hafta6.html">← Hafta 6'ya geri dön</a></p>
-    <hr>
-    <footer>
-        <p>&copy; 2026 MustafaMertCeylan | Web Programlama Dersi</p>
-    </footer>
+        <footer>
+            <p>&copy; 2026 Mustafa Mert Ceylan | Web Programlama Dersi</p>
+        </footer>
+
+    </div>
 
     <script>
         function harfNotu(ort) {
@@ -169,18 +203,16 @@
         }
 
         function hesapla() {
-            const adSoyad = document.getElementById('adSoyad').value.trim();
-            const vizeVal = document.getElementById('vize').value.trim();
+            const adSoyad  = document.getElementById('adSoyad').value.trim();
+            const vizeVal  = document.getElementById('vize').value.trim();
             const finalVal = document.getElementById('final').value.trim();
 
-            // Reset errors
-            document.getElementById('vizeHata').style.display = 'none';
+            document.getElementById('vizeHata').style.display  = 'none';
             document.getElementById('finalHata').style.display = 'none';
-            document.getElementById('sonuc').style.display = 'none';
+            document.getElementById('sonuc').style.display     = 'none';
 
-            const vize = parseFloat(vizeVal);
+            const vize     = parseFloat(vizeVal);
             const finalNot = parseFloat(finalVal);
-
             let hata = false;
 
             if (isNaN(vize) || vize < 0 || vize > 100) {
@@ -194,16 +226,16 @@
             if (hata) return;
 
             const ortalama = vize * 0.4 + finalNot * 0.6;
-            const harf = harfNotu(ortalama);
-            const gecti = ortalama >= 50;
+            const harf     = harfNotu(ortalama);
+            const gecti    = ortalama >= 50;
 
-            document.getElementById('sonucAd').textContent = adSoyad || 'Öğrenci';
+            document.getElementById('sonucAd').textContent      = adSoyad || 'Öğrenci';
             document.getElementById('sonucOrtalama').textContent = 'Ortalama: ' + ortalama.toFixed(2);
-            document.getElementById('sonucHarf').textContent = 'Harf Notu: ' + harf;
+            document.getElementById('sonucHarf').textContent    = 'Harf Notu: ' + harf;
 
             const durumEl = document.getElementById('sonucDurum');
-            durumEl.textContent = 'Durum: ' + (gecti ? 'Geçti' : 'Kaldı');
-            durumEl.className = gecti ? 'durum-gecti' : 'durum-kaldi';
+            durumEl.textContent = 'Durum: ' + (gecti ? 'Geçti ✓' : 'Kaldı ✗');
+            durumEl.className   = gecti ? 'durum-gecti' : 'durum-kaldi';
 
             document.getElementById('sonuc').style.display = 'block';
         }

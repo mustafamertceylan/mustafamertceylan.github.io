@@ -1,0 +1,340 @@
+/* ===================================================
+   styles/hafta7.css — Bootstrap + JavaScript Lab
+   Mustafa Mert Ceylan | Web Programlama Dersi
+   Proje renk paleti korundu:
+   - Ana mavi     : #4a90e2
+   - Hafta 7 turuncu: #e67e22
+   - Font         : 'Segoe UI', Tahoma, sans-serif
+   - Arka plan    : #f8f9fa
+   - Metin        : #333 / #555 / #777
+   - Kenarlık     : #e1e4e8
+   =================================================== */
+
+/* ---- GENEL SAYFA ---- */
+body {
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+    padding-top: 0;          /* Bootstrap navbar fixed değil */
+}
+
+/* ---- NAVBAR ---- */
+.h7-navbar {
+    background-color: #ffffff !important;
+    border-bottom: 1px solid #e1e4e8;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+}
+
+.h7-navbar .navbar-brand {
+    font-weight: 700;
+    font-size: 20px;
+    color: #e67e22 !important;
+    letter-spacing: 1px;
+}
+
+.h7-navbar .nav-link {
+    color: #555 !important;
+    font-size: 14px;
+    padding: 8px 14px !important;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+}
+
+.h7-navbar .nav-link:hover {
+    background-color: #fff3e8;
+    color: #e67e22 !important;
+}
+
+.h7-navbar .nav-link.active-page {
+    background-color: #e67e22;
+    color: white !important;
+    font-weight: 600;
+}
+
+/* ---- HERO ---- */
+.h7-hero {
+    background: linear-gradient(135deg, #fff8f3 0%, #fde8d0 100%);
+    border-bottom: 1px solid #f0d5b8;
+    padding: 70px 0 60px;
+}
+
+.h7-hero h1 {
+    font-size: 32px;
+    font-weight: 700;
+    color: #333;
+}
+
+.h7-hero p.lead {
+    color: #555;
+    font-size: 16px;
+    max-width: 580px;
+}
+
+.h7-btn-primary {
+    background-color: #e67e22;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 26px;
+    font-size: 14px;
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    font-weight: 600;
+    color: white;
+    transition: background-color 0.2s ease;
+    cursor: pointer;
+}
+
+.h7-btn-primary:hover {
+    background-color: #ca6f1e;
+    color: white;
+}
+
+.h7-btn-outline {
+    background-color: transparent;
+    border: 2px solid #e67e22;
+    border-radius: 5px;
+    padding: 9px 24px;
+    font-size: 14px;
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    font-weight: 600;
+    color: #e67e22;
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
+
+.h7-btn-outline:hover {
+    background-color: #e67e22;
+    color: white;
+}
+
+/* Tema değiştirme butonu */
+#temaBtn {
+    background-color: #4a90e2;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 20px;
+    font-size: 13px;
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    font-weight: 600;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+#temaBtn:hover { background-color: #357abd; }
+
+/* ---- KARTLAR ---- */
+.h7-section-title {
+    font-size: 22px;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 8px;
+}
+
+.h7-section-sub {
+    font-size: 14px;
+    color: #777;
+    margin-bottom: 32px;
+}
+
+.h7-card {
+    border: 1px solid #e1e4e8!important;
+    border-radius: 8px !important;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+    height: 100%;
+}
+
+.h7-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.08) !important;
+    border-color: #e67e22 !important;
+}
+
+.h7-card .card-title {
+    font-size: 16px;
+    font-weight: 700;
+    color: #333;
+}
+
+.h7-card .card-text {
+    font-size: 13px;
+    color: #555;
+    line-height: 1.6;
+}
+
+.h7-card-icon {
+    font-size: 32px;
+    margin-bottom: 12px;
+    display: block;
+}
+
+.h7-card .btn-sm {
+    background-color: #e67e22;
+    border: none;
+    border-radius: 4px;
+    font-size: 12px;
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    color: white;
+    padding: 5px 14px;
+    transition: background-color 0.2s ease;
+}
+
+.h7-card .btn-sm:hover { background-color: #ca6f1e; color: white; }
+
+/* ---- FORM ALANI ---- */
+.h7-form-section {
+    background-color: #ffffff;
+    border: 1px solid #e1e4e8;
+    border-radius: 8px;
+    padding: 36px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.h7-form-section h2 {
+    font-size: 20px;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 6px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid #e67e22;
+}
+
+.h7-form-section .form-label {
+    font-size: 13px;
+    font-weight: 600;
+    color: #555;
+}
+
+.h7-form-section .form-control,
+.h7-form-section .form-select {
+    font-size: 14px;
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    border-color: #e1e4e8;
+    border-radius: 4px;
+    color: #333;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.h7-form-section .form-control:focus,
+.h7-form-section .form-select:focus {
+    border-color: #e67e22;
+    box-shadow: 0 0 0 3px rgba(230, 126, 34, 0.12);
+}
+
+/* ---- SONUÇ ALANI ---- */
+#sonucAlani {
+    display: none;
+    margin-top: 24px;
+    border: 1px solid #f0d5b8;
+    border-radius: 8px;
+    background-color: #fff8f3;
+    padding: 20px 24px;
+}
+
+#sonucAlani h5 {
+    font-size: 15px;
+    font-weight: 700;
+    color: #e67e22;
+    margin-bottom: 12px;
+    border-bottom: 1px solid #f0d5b8;
+    padding-bottom: 8px;
+}
+
+#sonucAlani p {
+    font-size: 13px;
+    color: #444;
+    margin-bottom: 6px;
+    line-height: 1.6;
+}
+
+#sonucAlani strong { color: #333; }
+
+/* Hata uyarı kutusu */
+#uyariAlani {
+    display: none;
+    margin-top: 14px;
+}
+
+/* ---- FOOTER ---- */
+.h7-footer {
+    background-color: #fafbfc;
+    border-top: 1px solid #e1e4e8;
+    padding: 22px 0;
+    text-align: center;
+    font-size: 12px;
+    color: #999;
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+}
+
+/* ====================================================
+   KOYU TEMA (dark-mode class body'ye eklenir)
+   ==================================================== */
+body.dark-mode {
+    background-color: #1a1d23;
+    color: #e0e0e0;
+}
+
+body.dark-mode .h7-navbar {
+    background-color: #22262f !important;
+    border-bottom-color: #333;
+}
+
+body.dark-mode .h7-navbar .nav-link {
+    color: #bbb !important;
+}
+
+body.dark-mode .h7-navbar .nav-link:hover {
+    background-color: #2e3340;
+    color: #e67e22 !important;
+}
+
+body.dark-mode .h7-hero {
+    background: linear-gradient(135deg, #22262f 0%, #2c2010 100%);
+    border-bottom-color: #3a2e1a;
+}
+
+body.dark-mode .h7-hero h1,
+body.dark-mode .h7-section-title { color: #e8e8e8; }
+
+body.dark-mode .h7-hero p.lead,
+body.dark-mode .h7-section-sub,
+body.dark-mode .h7-card .card-text { color: #aaa; }
+
+body.dark-mode .h7-card {
+    background-color: #22262f !important;
+    border-color: #333 !important;
+    color: #e0e0e0;
+}
+
+body.dark-mode .h7-card .card-title { color: #e8e8e8; }
+
+body.dark-mode .h7-form-section {
+    background-color: #22262f;
+    border-color: #333;
+}
+
+body.dark-mode .h7-form-section h2 { color: #e8e8e8; }
+
+body.dark-mode .h7-form-section .form-label { color: #aaa; }
+
+body.dark-mode .h7-form-section .form-control,
+body.dark-mode .h7-form-section .form-select {
+    background-color: #1a1d23;
+    border-color: #444;
+    color: #e0e0e0;
+}
+
+body.dark-mode #sonucAlani {
+    background-color: #2a2010;
+    border-color: #5a3a10;
+}
+
+body.dark-mode #sonucAlani p { color: #ccc; }
+body.dark-mode #sonucAlani strong { color: #e8e8e8; }
+
+body.dark-mode .h7-footer {
+    background-color: #22262f;
+    border-top-color: #333;
+    color: #666;
+}
+
+body.dark-mode .bg-light { background-color: #1e2128 !important; }

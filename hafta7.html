@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hafta 7 - Bootstrap Lab | MustafaMertCeylan</title>
+
+    <!-- Bootstrap 5 CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Projeye özel CSS -->
+    <link rel="stylesheet" href="hafta7.css">
+</head>
+<body>
+
+    <!-- ============================================================
+         NAVBAR
+    ============================================================= -->
+    <nav class="navbar navbar-expand-lg h7-navbar">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">MMC</a>
+
+            <button class="navbar-toggler" type="button"
+                    data-bs-toggle="collapse" data-bs-target="#navMenu"
+                    aria-controls="navMenu" aria-expanded="false"
+                    aria-label="Menüyü aç/kapat">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navMenu">
+                <ul class="navbar-nav ms-auto gap-1 align-items-center">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Ana Sayfa</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">Hakkında</a></li>
+                    <li class="nav-item"><a class="nav-link" href="interests.html">Hizmetler</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">İletişim</a></li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="27mart.html"
+                           style="background:#4a90e2;color:white!important;font-weight:700;border-radius:4px;">27Mart</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="lab-position.html"
+                           style="background:#7c5cbf;color:white!important;font-weight:700;border-radius:4px;">3Nisan</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="hafta6.html"
+                           style="background:#2ecc71;color:white!important;font-weight:700;border-radius:4px;">Hafta 6</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active-page" href="hafta7.html">Hafta 7</a>
+                    </li>
+                </ul>
+
+                <!-- Tema değiştirme butonu — type="button" zorunlu! -->
+                <button type="button" id="temaBtn" class="ms-3">
+                    <span id="temaIkon">🌙</span>
+                    <span id="temaYazi"> Koyu Tema</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ============================================================
+         HERO
+    ============================================================= -->
+    <section class="h7-hero">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-7">
+                    <h1>Siber Güvenlik Topluluğu<br>Etkinlik Kayıt Sistemi</h1>
+                    <p class="lead mt-3">
+                        Bootstrap ve JavaScript ile geliştirilmiş bu sayfada etkinliğe kayıt olabilir,
+                        oturum detaylarını inceleyebilir ve başvuru özetini anında görebilirsin.
+                    </p>
+                    <div class="d-flex gap-3 mt-4 flex-wrap">
+                        <!-- type="button" — form içinde değil ama yine de iyi alışkanlık -->
+                        <a href="#basvuruBolumu">
+                            <button type="button" class="h7-btn-primary">Hemen Kayıt Ol →</button>
+                        </a>
+                        <a href="#kartlar">
+                            <button type="button" class="h7-btn-outline">Oturumları İncele</button>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-5 text-center mt-4 mt-lg-0">
+                    <div style="font-size:90px; line-height:1;">🔐</div>
+                    <p style="font-size:14px; color:#777; margin-top:8px;">Siber Güvenlik &amp; Web Programlama</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         KARTLAR — data-kart attribute'u ile JS bağlantısı kuruldu
+    ============================================================= -->
+    <section id="kartlar" class="py-5 bg-light">
+        <div class="container">
+            <div class="text-center mb-4">
+                <h2 class="h7-section-title">Etkinlik Oturumları</h2>
+                <p class="h7-section-sub">Bu yıl 3 farklı oturumda teknik içerikler sunulacak. Detay için tıklayın.</p>
+            </div>
+            <div class="row g-4">
+
+                <!-- Kart 1 -->
+                <div class="col-md-4">
+                    <div class="card h7-card shadow-sm p-2">
+                        <div class="card-body text-center">
+                            <span class="h7-card-icon">🛡️</span>
+                            <h5 class="card-title">Penetrasyon Testi</h5>
+                            <p class="card-text">
+                                Kali Linux ve Burp Suite araçlarıyla gerçek
+                                dünya saldırı senaryoları üzerinde uygulama.
+                            </p>
+                            <div class="d-flex justify-content-between align-items-center mt-3">
+                                <small style="color:#777;">10:00 – 12:00</small>
+                                <!-- data-kart ile JS'e bağlandı -->
+                                <button type="button" class="btn btn-sm kart-detay-btn"
+                                        data-kart="pentest">Detay</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Kart 2 -->
+                <div class="col-md-4">
+                    <div class="card h7-card shadow-sm p-2">
+                        <div class="card-body text-center">
+                            <span class="h7-card-icon">🌐</span>
+                            <h5 class="card-title">Ağ Güvenliği</h5>
+                            <p class="card-text">
+                                Cisco yönlendirme protokolleri, OSPF ve güvenli
+                                ağ tasarımı prensipleri üzerine interaktif atölye.
+                            </p>
+                            <div class="d-flex justify-content-between align-items-center mt-3">
+                                <small style="color:#777;">13:00 – 15:00</small>
+                                <button type="button" class="btn btn-sm kart-detay-btn"
+                                        data-kart="network">Detay</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Kart 3 -->
+                <div class="col-md-4">
+                    <div class="card h7-card shadow-sm p-2">
+                        <div class="card-body text-center">
+                            <span class="h7-card-icon">🐍</span>
+                            <h5 class="card-title">Python ile Otomasyon</h5>
+                            <p class="card-text">
+                                Güvenlik testlerini otomatikleştiren Python scriptleri
+                                yazma ve ağ tarama araçları geliştirme.
+                            </p>
+                            <div class="d-flex justify-content-between align-items-center mt-3">
+                                <small style="color:#777;">15:30 – 17:00</small>
+                                <button type="button" class="btn btn-sm kart-detay-btn"
+                                        data-kart="python">Detay</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         BAŞVURU FORMU
+    ============================================================= -->
+    <section id="basvuruBolumu" class="py-5">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="h7-form-section">
+                        <h2>📋 Etkinlik Başvuru Formu</h2>
+                        <p style="font-size:13px; color:#777; margin-top:8px; margin-bottom:24px;">
+                            * işaretli alanlar zorunludur. Başvurunuz anında onaylanır.
+                        </p>
+
+                        <form id="basvuruForm" novalidate>
+
+                            <div class="row g-3 mb-3">
+                                <div class="col-md-6">
+                                    <label for="adSoyad" class="form-label">Ad Soyad *</label>
+                                    <input type="text" class="form-control" id="adSoyad"
+                                           placeholder="Mustafa Mert Ceylan">
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="email" class="form-label">E-posta *</label>
+                                    <input type="email" class="form-control" id="email"
+                                           placeholder="ornek@mail.com">
+                                </div>
+                            </div>
+
+                            <div class="row g-3 mb-3">
+                                <div class="col-md-6">
+                                    <label for="bolum" class="form-label">Bölüm *</label>
+                                    <input type="text" class="form-control" id="bolum"
+                                           placeholder="Bilgisayar Mühendisliği">
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="oturum" class="form-label">Katılmak İstediğiniz Oturum *</label>
+                                    <select class="form-select" id="oturum">
+                                        <option value="">Oturum seçin...</option>
+                                        <option value="pentest">Penetrasyon Testi (10:00 – 12:00)</option>
+                                        <option value="network">Ağ Güvenliği (13:00 – 15:00)</option>
+                                        <option value="python">Python ile Otomasyon (15:30 – 17:00)</option>
+                                        <option value="hepsi">Tüm Oturumlar</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="mb-3">
+                                <label class="form-label">Deneyim Seviyesi</label>
+                                <div class="d-flex gap-4">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio"
+                                               name="seviye" id="seviyeBaslangic" value="Başlangıç">
+                                        <label class="form-check-label" for="seviyeBaslangic"
+                                               style="font-size:13px;">Başlangıç</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio"
+                                               name="seviye" id="seviyeOrta" value="Orta">
+                                        <label class="form-check-label" for="seviyeOrta"
+                                               style="font-size:13px;">Orta</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio"
+                                               name="seviye" id="seviyeIleri" value="İleri">
+                                        <label class="form-check-label" for="seviyeIleri"
+                                               style="font-size:13px;">İleri</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="mesaj" class="form-label">Ek Not / Soru</label>
+                                <textarea class="form-control" id="mesaj" rows="3"
+                                          placeholder="Sormak istediğiniz bir şey varsa buraya yazabilirsiniz..."></textarea>
+                            </div>
+
+                            <div class="mb-4">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="kvkk">
+                                    <label class="form-check-label" for="kvkk" style="font-size:13px;">
+                                        Kişisel verilerimin işlenmesine ilişkin <strong>KVKK metnini</strong>
+                                        okudum ve onaylıyorum. *
+                                    </label>
+                                </div>
+                            </div>
+
+                            <!-- type="submit" — formun içinde olduğu için doğru -->
+                            <button type="submit" class="h7-btn-primary w-100"
+                                    style="padding:12px;">Başvuruyu Gönder</button>
+
+                        </form>
+
+                        <div id="uyariAlani"></div>
+                        <div id="sonucAlani"></div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         FOOTER
+    ============================================================= -->
+    <footer class="h7-footer">
+        <p>&copy; 2026 Mustafa Mert Ceylan | Web Programlama Dersi — Hafta 7 Bootstrap Lab</p>
+        <p style="margin-top:4px;">
+            <a href="index.html" style="color:#e67e22; text-decoration:none;">← Ana Sayfaya Dön</a>
+        </p>
+    </footer>
+
+    <!-- Bootstrap JS CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Uygulama JS — Bootstrap'tan SONRA yükleniyor -->
+    <script src="hafta7.js"></script>
+
+</body>
+</html>
