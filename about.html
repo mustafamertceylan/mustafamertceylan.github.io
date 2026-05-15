@@ -3,39 +3,79 @@
 <head>
     <meta charset="UTF-8">
     <title>Hakkımda - MustafaMertCeylan</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h2>Hakkımda</h2>
-    <p>Kendimi ve hedeflerimi tanıttığım sayfa</p>
+    <div class="site-container">
+        <header>
+            <div class="header-content">
+                <h1>Hakkımda</h1>
+                <p>Marmara Üniversitesi - Bilgisayar Mühendisliği</p>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Ana Sayfa</a></li>
+                    <li><a href="about.html" class="active">Hakkımda</a></li>
+                    <li><a href="interests.html">Hizmetler</a></li>
+                    <li><a href="contact.html">İletişim</a></li>
+                    <li><a href="27mart.html" class="btn-27mart">27Mart</a></li>
+                    <li><a href="lab-position.html" class="btn-3nisan">3Nisan</a></li>
+                    <li><a href="hafta6.html" class="btn-hafta6">Hafta 6</a></li>
+                    <li><a href="hafta7.html" class="btn-hafta7">Hafta 7</a></li>
+                </ul>
+            </nav>
+        </header>
 
-    <nav>
-        <ul>
-            <li><a href="index.html">Ana Sayfa</a></li>
-            <li><a href="about.html">Hakkımda</a></li>
-            <li><a href="interests.html">İlgi Alanlarım</a></li>
-            <li><a href="contact.html">İletişim</a></li>
-        </ul>
-    </nav>
+        <section class="intro">
+            <p>Merhaba! Ben Mustafa Mert Ceylan. Siber güvenlik ve bilgisayar ağları alanında tutkulu bir öğrenci, teknoloji meraklısı ve sürekli öğrenmeye inanan biri olarak kendimi tanımlıyorum.</p>
+        </section>
 
-    <h3>Ben Kimim?</h3>
-    <p>Merhaba, ben <strong>Marmara Üniversitesi</strong> öğrencisiyim. <em>Siber güvenlik</em> ve bilgisayar ağları konularına büyük ilgi duyuyor, kendimi bu alanlarda geliştirmeyi hedefliyorum.</p>
-    
-    <h3>Eğitim Bilgilerim</h3>
-    <ul>
-        <li>Marmara Üniversitesi</li>
-        <li>Web Programlama Dersi</li>
-        <li>Atıl Samancıoğlu - Etik Hacker Eğitimi</li>
-    </ul>
+        <main class="columns-container">
+            <article class="box box-left">
+                <h2>👨‍💻 Kim Olduğum?</h2>
+                <p>Marmara Üniversitesi Bilgisayar Mühendisliği bölümünde öğrenime devam etmekteyim. Geçtiğim bu yolda, sadece teorik bilgi değil, pratik deneyim kazanmayı da çok önemsiyorum. Siber güvenliğin karmaşık dünyası beni her gün yeni şeyler öğrenmeye motive ediyor.</p>
+                <p>Penetrasyon testleri, ağ güvenliği ve etik hacking konularında derinlemesine bilgi sahibi olmak için elinden geleni yapıyorum. Kali Linux üzerinde çalışmalar yapıyor, Burp Suite gibi gelişmiş araçlarla web uygulamalarının zafiyetlerini tespit etmeyi öğreniyorum. Aynı zamanda Cisco yönlendirme protokollerini ve OSPF gibi ağ sistemlerinin güvenliğini inceliyorum.</p>
+            </article>
 
-    <h3>Motivasyonum</h3>
-    <blockquote>
-        "Güvenlik, bir ürün değil, bir süreçtir."
-    </blockquote>
+            <aside class="box box-right">
+                <h2>🎯 Hedeflerim ve Vizyonum</h2>
+                <p>Kısa vadede; aldığım eğitimleri tamamlamak, sertifikalar kazanmak ve gerçek dünya projelerde çalışmak istiyorum. Uzun vadede ise, siber güvenlik alanında bir uzman olarak önemli projelere katkı sağlamak ve belki kendi başıma başarılı girişimler kurmak hayalim.</p>
+                <p>Bana göre, iyi bir siber güvenlik uzmanı sadece hacker değil, aynı zamanda savunmacı da olmalı. Kurumların ve bireylerin dijital varlıklarını korumak için sistematik bir yaklaşımla çalışmak, benim misyonum. Açık kaynak kodlu projelere katkı sağlamak ve bilgimi paylaşmak da benim için çok önemli.</p>
+            </aside>
+        </main>
 
-    <p><a href="index.html">← Ana sayfaya geri dön</a></p>
-    <hr>
-    <footer>
-        <p>&copy; 2026 Mustafa Mert Ceylan | Web Programlama Dersi</p>
-    </footer>
+        <div style="padding: 0 25px 25px; font-size: 0;">
+            <div style="display: inline-block; width: 48%; vertical-align: top; padding: 20px; box-sizing: border-box; background-color: #f0f7ff; border: 1px solid #cce0f5; border-radius: 6px; margin-right: 4%; font-size: 14px;">
+                <h3 style="color: #333; margin: 0 0 12px; font-size: 16px;">📚 Eğitim ve Sertifikalar</h3>
+                <ul style="margin: 0; padding-left: 20px; color: #555;">
+                    <li style="margin-bottom: 8px;"><strong>Marmara Üniversitesi</strong><br><span style="font-size: 13px; color: #777;">Bilgisayar Mühendisliği (Devam Ediyor)</span></li>
+                    <li style="margin-bottom: 8px;"><strong>Web Programlama</strong><br><span style="font-size: 13px; color: #777;">HTML5, CSS3, JavaScript, Bootstrap</span></li>
+                    <li style="margin-bottom: 8px;"><strong>Atıl Samancıoğlu - Etik Hacker Kursu</strong><br><span style="font-size: 13px; color: #777;">Kali Linux, Penetrasyon Testi Temelleri</span></li>
+                    <li><strong>İşletim Sistemleri & Ağlar</strong><br><span style="font-size: 13px; color: #777;">Cisco Yönlendirme, OSPF Protokolleri</span></li>
+                </ul>
+            </div>
+
+            <div style="display: inline-block; width: 48%; vertical-align: top; padding: 20px; box-sizing: border-box; background-color: #fffaf0; border: 1px solid #f3e5ab; border-radius: 6px; font-size: 14px;">
+                <h3 style="color: #333; margin: 0 0 12px; font-size: 16px;">💡 Kişisel Niteliklerim</h3>
+                <ul style="margin: 0; padding-left: 20px; color: #555;">
+                    <li style="margin-bottom: 8px;"><strong>Analitik Düşünce:</strong> Karmaşık problemleri sistematik şekilde çözebilirim</li>
+                    <li style="margin-bottom: 8px;"><strong>Merakçı Yapı:</strong> Sistemlerin nasıl çalıştığını anlamaya meraklıyım</li>
+                    <li style="margin-bottom: 8px;"><strong>Öğrenme Hevesi:</strong> Sürekli yeni teknolojiler ve teknikler öğrenmeye istekliyim</li>
+                    <li><strong>Sorumluluk Bilinci:</strong> Etik hacker prensiplerine sıkı sıkıya bağlı kalırım</li>
+                </ul>
+            </div>
+        </div>
+
+        <div style="padding: 20px 25px; background-color: #f8f9fa; border-top: 1px solid #f0f0f0; border-bottom: 1px solid #f0f0f0; margin: 20px 0;">
+            <h3 style="color: #333; margin: 0 0 12px; text-align: center;">🌟 Benim Felsefem</h3>
+            <blockquote style="border-left: 4px solid #4a90e2; padding-left: 16px; margin: 0; color: #555; font-style: italic; line-height: 1.8;">
+                <strong>"Güvenlik, bir ürün değil; bir zihniyettir."</strong> Dijital dünyada güvenlik, sadece araçlar ve teknolojiler değil, sürekli öğrenme, merak ve sorumlu davranış birleşimidir. Kendi sistemlerimi her gün test etmeyi, zafiyetlerimi bulmamı sağlayacak kaynakları araştırmayı ve bu bilgiyi etik bir şekilde kullanmayı önemsiyorum. Hedefim, kendimi ve başkalarını daha güvenli bir dijital ortamda yaşamaya hazırlamaktır.
+            </blockquote>
+        </div>
+
+        <footer>
+            <p>&copy; 2026 Mustafa Mert Ceylan | Web Programlama Dersi</p>
+        </footer>
+    </div>
 </body>
 </html>
